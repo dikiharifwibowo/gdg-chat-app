@@ -51,6 +51,7 @@ export default {
       this.userName = "";
     },
     sendMessage() {
+      console.log("asdas")
       const message = {
         text: this.showMessage,
         username: this.name
