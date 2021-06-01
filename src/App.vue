@@ -1,33 +1,47 @@
 <template>
   <div id="app">
     <!-- Login section -->
-    <div class="login mt-5" v-if="!name">
-      <h3 class="mt-5">Join Chat</h3>
-      <label for="username">userName</label>
+    <div class="login mt-5 rounded-lg" v-if="!name">
+      <div class="text-3xl font-nunito font-extrabold pt-4 text-center text-gray-900 mb-7 mt-16">
+        <span class="block xl:inline">Join Chat</span>
+      </div>
+      <label for="userName" class="font-bold w-2/5">
+        Username
+      </label>
       <br />
-      <input class="mb-3" type="text" v-model="userName" />
+      <input v-model="userName" type="text" class="w-60 w-full sm:w-3/4 py-3 text-center sm:text-left sm:pl-5 bg-white
+        border border-solid border-black-20% box-border rounded-md font-nunito font-semibold text-career-dropdown text-black-50%">
       <br />
-      <button class="btn btn-primary" @click="updateUsername">Join Chat</button>
+      <br />
+      <button @click="updateUsername" class="px-6 py-3 mb-3 text-lg text-grey font-semibold bg-yellow-300 rounded-md sm:mb-0 sm:w-auto">
+        Join Chat
+      </button>
     </div>
 
     <!-- Chat section -->
     <div class="message-body mt-3" v-else>
-      <h3>Chat</h3>
-      <h5>Welcome {{ name }}!</h5>
-      <div class="card">
-        <div class="card-body">
-          <div
-            class="border pl-2 pt-1 ml-2 message-text mb-2"
-            v-for="message in messages"
-            :key="message"
-          >
-            <span class="mg-text">{{ message.username }}</span>
-            <p class="message pt-1">{{ message.text }}</p>
+      <div class="text-3xl font-nunito font-extrabold pt-4 text-center text-gray-900 mb-7 mt-16">
+        <span class="block xl:inline">Chat</span>
+      </div>
+      <div class="font-bold">Welcome {{ name }}!</div>
+      <div class="card rounded-lg">
+        <div class="card-body" style="overflow: auto">
+          <div class="chat-message mb-3"  v-for="message in messages"
+               :key="message">
+            <div class="flex items-end">
+              <div class="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-1">
+                <div class="font-bold">{{ message.username }}</div>
+                <div class="mt-0"><span class="px-4 py-2 rounded-lg inline-block bg-blue-600 text-white ">{{ message.text }}</span></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <input v-model="showMessage" type="text" class="mt-3 mr-2 pl-2 pr-2" />
-      <button class="btn btn-primary" @click="sendMessage">Send</button>
+      <input v-model="showMessage" type="text" class="mt-2 w-60 w-full sm:w-3/4 py-3 text-center sm:text-left sm:pl-5 bg-white
+        border border-solid border-black-20% box-border rounded-md font-nunito font-semibold text-career-dropdown text-black-50% mr-3">
+      <button @click="sendMessage" class="px-6 py-3 mb-3 text-lg text-grey font-semibold bg-yellow-300 rounded-md sm:mb-0 sm:w-auto">
+        Send
+      </button>
     </div>
   </div>
 </template>
