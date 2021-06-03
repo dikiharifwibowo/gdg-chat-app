@@ -26,8 +26,8 @@
       <div class="font-bold">Welcome {{ name }}!</div>
       <div class="rounded-lg">
         <div class="bg-white" style="overflow: auto">
-          <div class="mb-3"  v-for="message in messages"
-               :key="message">
+          <div class="mb-3"  v-for="(message, index) in messages"
+               :key="index">
             <div class="flex items-end">
               <div class="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-1">
                 <div class="font-bold">{{ message.username }}</div>
