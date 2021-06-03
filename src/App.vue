@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
+  <div id="app" class="container">
     <!-- Login section -->
-    <div class="login mt-5 rounded-lg" v-if="!name">
+    <div class="px-24 mt-5 rounded-lg" v-if="!name">
       <div class="text-3xl font-nunito font-extrabold pt-4 text-center text-gray-900 mb-7 mt-16">
         <span class="block xl:inline">Join Chat</span>
       </div>
@@ -19,14 +19,14 @@
     </div>
 
     <!-- Chat section -->
-    <div class="message-body mt-3" v-else>
+    <div class="px-24 mt-3" v-else>
       <div class="text-3xl font-nunito font-extrabold pt-4 text-center text-gray-900 mb-7 mt-16">
         <span class="block xl:inline">Chat</span>
       </div>
       <div class="font-bold">Welcome {{ name }}!</div>
-      <div class="card rounded-lg">
-        <div class="card-body" style="overflow: auto">
-          <div class="chat-message mb-3"  v-for="message in messages"
+      <div class="rounded-lg">
+        <div class="bg-white" style="overflow: auto">
+          <div class="mb-3"  v-for="message in messages"
                :key="message">
             <div class="flex items-end">
               <div class="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-1">
@@ -96,62 +96,4 @@ export default {
 };
 </script>
 
-<style>
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Material+Icons");
-#app {
-  font-family: "Roboto", sans-serif;
-  font-size: 18px;
-}
-.login {
-  background: #fff;
-  width: 40%;
-  height: 50vh;
-  margin: auto;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-h3 {
-  font-size: 30px;
-  text-align: center;
-}
-input {
-  width: 100%;
-  border-radius: 4px;
-  border: 1px solid rgb(156, 156, 156);
-  padding-left: 2px;
-  padding-right: 2px;
-}
-.message-body {
-  width: 40%;
-  height: 80vh;
-  margin: auto;
-}
-.message-text {
-  min-width: 10%;
-  border-radius: 4px;
-}
-.message {
-  font-size: 14px;
-}
-.mg-text {
-  color: rgb(0, 195, 255);
-  font-weight: bolder;
-}
-.message-body input {
-  width: 80%;
-  border-radius: 4px;
-  border: 1px solid rgb(156, 156, 156);
-  height: 6vh;
-  padding-left: 2px;
-  padding-right: 2px;
-}
-.card {
-  width: 100%;
-  height: 75vh;
-  margin: auto;
-}
-.card-body {
-  min-height: 50vh;
-  overflow-x: scroll;
-}
-</style>
+
